@@ -1,0 +1,82 @@
+:root {
+  --element-width: 30px;
+  --element-height: 30px;
+  --element-left:0px;
+  --element-top:0px;
+  --element-border:0px;
+  --cursor: default;
+}
+
+html {
+  height: 100%;
+  cursor:  var(--cursor);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainBlock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.element {
+  cursor:grab;
+  user-select: none;
+  position: absolute;
+  width: var(--element-width);
+  height: var(--element-height);
+  left: var(--element-left);
+  top: var(--element-top);
+  background: red;
+}
+
+.left{
+  position: absolute;
+  left: 0;
+  width: var(--element-border);
+  height: 100%;
+  background: black;
+}
+.right{
+  position: absolute;
+  right: 0;
+  width: var(--element-border);
+  height: 100%;
+  background: black;
+}
+
+.bottom{
+  position: absolute;
+  bottom: 0;
+  height: var(--element-border);
+  width: 100%;
+  background: black;
+}
+
+.top{
+  position: absolute;
+  top: 0;
+  height: var(--element-border);
+  width: 100%;
+  background: black;
+}
+
+.left:hover, .right:hover{
+  z-index: 2;
+  cursor:grabbing;
+  background-color: gold;
+}
+
+.bottom:hover, .top:hover{
+  z-index: 2;
+  cursor:grabbing;
+  background-color: gold;
+}
